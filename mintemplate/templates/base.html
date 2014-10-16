@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Minimal Template</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery.cookie.js"></script>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+        <h2><div class="text-center" style="color: #333;"> Konstantin Minimal Template</div></h2>
+        <div class="container container-center">
+            <div class="col-md-3 menu">
+                <h3>Menu</h3>
+                <ul class="nav nav-pills nav-stacked default">
+                    <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="inactive"><a href="#">About</a></li>
+                    <li class="inactive"><a href="#">Applications</a></li>
+                    <li class="inactive"><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            {% block content %}
+            {% endblock  %}
+        </div>
+    {% endblock %}
+<script>
+    $(document).ready(function(e){
+        $('.inactive').click(function(e){
+            e.preventDefault()
+            $(this).parent().find('.active').removeClass('active').toggleClass('inactive');
+            $(this).removeClass('inactive').toggleClass('active');
+            $.cookie('whichButton', $(this),{ path: '/'});
+        })
+        
+        $($.cookie).toggleClass('active');
+    });
+</script>
+</body>
+</html>
