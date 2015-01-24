@@ -6,11 +6,13 @@
     <script src="{{ STATIC_URL }}js/jquery.cookie.js"></script>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+    {% load staticfiles %}
     {% block head %}
     {% endblock %}
 </head>
 <body>
     {% block body %}
+    {% include "dev-banr/banr.html" %}
         <h2><div class="text-center" style="color: #333;"> Konstantin Minimal Template</div></h2>
         <div class="container container-center">
             <div class="col-md-3 menu">
