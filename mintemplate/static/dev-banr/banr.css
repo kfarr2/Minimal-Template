@@ -5,19 +5,28 @@
     overflow: hidden;
 }
 
+#hide-banr {
+    margin: 10px;
+}
+
+#hide-banr:hover {
+    color: #666;
+    cursor: pointer;
+}
+
 h3 {
     margin-top: -5px;
     word-wrap: break-word;
 }
 
-table {
-    margin-left: auto;
-    margin-right: auto;
-}
-
 img {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .wrapper {
