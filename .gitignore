@@ -1,4 +1,4 @@
-*/settings/local.py
+*variables.py
 *.pyc
 .env
 media/*
