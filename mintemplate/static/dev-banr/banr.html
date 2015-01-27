@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}dev-banr/banr.css" />
 <div class="wrapper">
     <div id="banner-div" class="banner navbar navbar-inverse text-center">
         <table id="banner-table">
@@ -46,22 +45,3 @@
         </table>
     </div>
 </div>
-
-<script>
-    var docs = document.getElementById("banner-table");
-    var num = Math.floor(Math.random() * docs.rows.length);
-
-    function hideAll(){
-        document.getElementById("banner-div").style.display = "none";
-        document.cookie = "hidecookie=True; max-age=300; path=/;";
-    }
-
-    for(var i = 0; i < docs.rows.length; i++){
-        docs.rows[i].style.display="none";
-    }
-    docs.rows[num].style.display = "block";
-
-    if(document.cookie.indexOf("hidecookie=True") != -1){
-        document.getElementById("banner-div").style.display = "none";
-    }
-</script>
